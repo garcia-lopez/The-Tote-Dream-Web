@@ -4,7 +4,7 @@
     margin-top: 5%;
     position: absolute;
     color: #993b46;
-    z-index: 0; /* higher z-index value */
+    z-index: 0; /* Lower z-index value */
 
   }
 
@@ -17,14 +17,14 @@
   font-size: 100px;
   color: #d599a0;
   position: relative;
-  z-index: 1; /* Lower z-index value */
+  z-index: 1; /* higher z-index value */
 }
 
 @media (max-width: 600px) {
   /* Mobile */
   .font_dream {
     font-size: 16vw;
-    margin-top: 18vw; /* Adjusts to viewport */
+    margin-top: 18vw; /*A viewport is the visible area of the webpage*/
     margin-left: 8vw; 
   }
 
@@ -33,7 +33,12 @@
     margin-top: 5vw;
     margin-left: 0vw;
   }
-}
+
+ .leaf {
+  display: none;
+ }
+  }
+
 
 * {
   margin: 0;
@@ -51,4 +56,12 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
+}
+
+.leaf {
+  width: 100px; /* or any other size */
+  height: 100px;
+  position: absolute;
+  margin-left: 43%;
+  margin-top: 4%;
 }
