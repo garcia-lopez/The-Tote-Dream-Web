@@ -1,42 +1,54 @@
 .font_logotipo {
     font-family: 'Better Saturday', 'sans-serif';
     font-size: 80px;
+    margin-top: 5%;
+    position: absolute;
     color: #993b46;
-    position:absolute;
     z-index: 0; /* higher z-index value */
 
   }
 
 .font_dream {
-  margin-top: 80px;
+  margin-top: 100px;
   margin-left: 60px;
-  position: relative;
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 100px;
   color: #d599a0;
+  position: relative;
   z-index: 1; /* Lower z-index value */
 }
 
 @media (max-width: 600px) {
   /* Mobile */
   .font_dream {
-    font-size: 80px;
-    margin-top: 22%;
-    margin-left: 18% 
+    font-size: 16vw;
+    margin-top: 18vw; /* Adjusts to viewport */
+    margin-left: 8vw; 
   }
 
   .font_logotipo {
-    font-size: 60px;
-    margin-top: 10%; 
-    margin-left: 7%;
+    font-size: 12vw;
+    margin-top: 5vw;
+    margin-left: 0vw;
   }
 }
 
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
 }
   
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
