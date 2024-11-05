@@ -4,12 +4,10 @@ import leafVector from '../../src/assets/leaf_vector.svg';
 function Logotipo_square() {
     return (
         <>
-        <div className='bg-white w-full min-h-[200px] rounded-[80px] overflow-hidden sm:w-[500px] sm:h-[250px] sm:pt-9 sm:rounded-[80px] container'>
-          <div className='grid justify-items-start sm:justify-items-start'>
-            <p className='font_logotipo'>The tote</p>
-            <img src={leafVector} alt="Description of image" className='leaf' />
-            <p className='font_dream'>DREAM</p>
-          </div>
+        <div className='bg-white w-[340px] h-[200px] rounded-[60px] flex justify-center pt-4 overflow-hidden lg:w-[500px] lg:h-[250px] lg:pt-4 lg:pb-4 sm:rounded-[60px] container'>
+            <p className='relative font_logotipo text-[52px] mt-6 mr-32 lg:text-[75px] shrink-0'>The tote</p>
+            <img src={leafVector} alt="" className='w-9 h-9 absolute top-14 left-44 lg:top-14 lg:left-72 lg:w-14 lg:h-16' />
+            <p className='absolute bottom-6 left-24 text-[50px] font_dream lg:left-36 lg:text-[80px]'>DREAM</p>
         </div>
       </>
       

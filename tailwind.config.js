@@ -10,6 +10,10 @@ export default {
         "TD-LightPink": "#ffecf1",
         "TD-SquarePink": "#fcb8d6",
         "TD-DarkSquarePink": "#b15983",
+        "TD-BigSquarePink": "#ffd5e8",
+      },
+      screens: {
+        'phone': {'max': '900px'}, // Applies to anything below 640px
       },
     },
   },
