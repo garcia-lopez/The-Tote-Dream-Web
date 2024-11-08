@@ -7,12 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        "TD-LightPink": "#ffecf1",
-        "TD-SquarePink": "#fcb8d6",
-        "TD-DarkSquarePink": "#b15983",
-        "TD-BigSquarePink": "#ffd5e8",
-        'TD-HoverPink1': '#c37896',
-        'TD-HoverPink2': '#fcc2dc',
+        "TD-LightPink": "#e1cdc3",
+        "TD-SquarePink": "#d7949c",
+        "TD-DarkSquarePink": "#993b46",
+        "TD-BigSquarePink": "#d599A0",
+        'TD-HoverPink1': '#a8575f',
+        'TD-HoverPink2': '#e2a8b0',
       },
       screens: {
         'phone': {'max': '900px'}, // Applies to anything below 640px
