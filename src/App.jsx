@@ -5,7 +5,7 @@ import Small_squares from './components/Small_squares';
 function App() {
   return (
     <>
-      <div className='flex flex-wrap p-9 gap-4 justify-center lg:grid lg:grid-cols-2' > 
+      <div className='flex flex-wrap p-9 gap-4 overflow-hidden justify-center lg:grid lg:grid-cols-2 lg:mx-auto' > 
            <div className='flex flex-wrap justify-center gap-4 lg:flex-col lg:items-center '>
               <Logotipo_square></Logotipo_square>
               <Small_squares></Small_squares>
