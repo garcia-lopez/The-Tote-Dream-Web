@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <div className='flex flex-wrap p-9 gap-4 overflow-hidden justify-center lg:grid lg:grid-cols-2 lg:mx-auto' > 
-           <div className='flex flex-wrap justify-center gap-4 lg:flex-col lg:items-center '>
+           <div className='flex flex-wrap justify-center gap-4 lg:flex-col overflow-hidden lg:items-center '>
               <Logotipo_square></Logotipo_square>
               <Small_squares></Small_squares>
            </div>
