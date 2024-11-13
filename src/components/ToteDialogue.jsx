@@ -4,7 +4,11 @@ const ToteDialogue = forwardRef((props, ref) => {
     const [openDialogue, setOpenDialogue ] = useState(false);
 
     function toggleDialog() {
-        setOpenDialogue(!openDialogue)
+        try{
+            setOpenDialogue(!openDialogue)
+        } catch(error){
+            console.log(error)
+        }
     }
     useImperativeHandle(ref, () => ({
         toggleDialog
@@ -13,10 +17,26 @@ const ToteDialogue = forwardRef((props, ref) => {
 
 
     return <>
-    <dialog open={openDialogue} className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-4 bg-[#EAD9D1] rounded shadow-lg">
-        <div className="m-auto p-4 bg-red-400" onClick={() => toggleDialog()}>
-            Close
+    <dialog open={openDialogue} className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-4 bg-[#EAD9D1] rounded-[10px] shadow-lg  shadow-lg transition-all duration-500 ease-out ${openDialogue ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}">
+        <div className="m-auto grid w-full" onClick={() => toggleDialog()}>
+            <div className='p-4 bg-red-400 place-self-end w-[50px]'>
+              close
+            </div>
         </div>
+        <div className='h-[300px] lg:h-[450px] lg:w-[450px] w-[300px] bg-blue-500 rounded-[10px] mt-4 mb-4'>
+
+        </div>
+        <div className=' w-full h-[50px] bg-green-500 flex flex-row rounded-[10px]'>
+            <div className='w-3/12 h-full bg-green-500'>
+            </div>
+            <div className='w-3/12 h-full bg-green-400'>
+            </div>
+            <div className='w-3/12 h-full bg-green-300'>
+            </div>
+            <div className='w-3/12 h-full bg-green-200'>
+            </div>
+        </div>
+
     </dialog>
 
 
