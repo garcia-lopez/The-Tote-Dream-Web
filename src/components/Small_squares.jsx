@@ -8,7 +8,7 @@ function Small_squares() {
         <>
             <div className='bg-TD-LightPink h-fit w-fit flex flex-wrap justify-center gap-2 p-4 rounded-[10px] lg:grid lg:grid-cols-2 lg:w-fit lg:p-6 lg:gap-4'>
 
-               <div className="relative overflow-hidden h-[150px] w-[150px] lg:h-[160px] lg:w-[160px] bg-TD-SquarePink hover:bg-TD-HoverPink2 rounded-[10px] shrink-0 ">
+               <div className="relative overflow-hidden h-[150px] w-[150px] lg:h-[160px] lg:w-[160px] bg-TD-SquarePink hover:bg-TD-HoverPink2 rounded-[10px] shrink-0 hover:cursor-pointer">
                 <img
                    className='w-[150px] h-[150px]'
                    src={Tote_bag }
@@ -17,7 +17,7 @@ function Small_squares() {
                     Stock
                 </p>
                </div> 
-               <div className="relative overflow-hidden flex items-center justify-center h-[150px] w-[150px] lg:h-[160px] lg:w-[160px] bg-TD-DarkSquarePink hover:bg-TD-HoverPink1 rounded-[10px] shrink-0 "> 
+               <div className="relative overflow-hidden flex items-center justify-center h-[150px] w-[150px] lg:h-[160px] lg:w-[160px] bg-TD-DarkSquarePink hover:bg-TD-HoverPink1 rounded-[10px] shrink-0 hover:cursor-pointer"> 
                <img
                    className='absolute w-[50px] h-[50px] right-2 top-2 '
                    src={ Stars }
@@ -31,13 +31,13 @@ function Small_squares() {
                 />
                </div>
              
-               <div className="h-[150px] w-[150px] overflow-hidden hover:bg-TD-HoverPink1 sm:order-last  lg:order-none lg:h-[160px] lg:w-[160px] bg-TD-DarkSquarePink rounded-[10px] shrink-0 " >
+               <div className="h-[150px] w-[150px] overflow-hidden hover:bg-TD-HoverPink1 sm:order-last  lg:order-none lg:h-[160px] lg:w-[160px] bg-TD-DarkSquarePink rounded-[10px] shrink-0 hover:cursor-pointer" >
                <img 
                    src={Shop_bag }
                    className='w-[150px] h-[150px]'
                 />
                </div>
-               <div className=" overflow-hidden flex flex-col justify-center h-[150px] w-[150px] lg:h-[160px] lg:w-[160px] bg-TD-SquarePink hover:bg-TD-HoverPink2 rounded-[10px] shrink-0 ">
+               <div className=" overflow-hidden flex flex-col justify-center h-[150px] w-[150px] lg:h-[160px] lg:w-[160px] bg-TD-SquarePink hover:bg-TD-HoverPink2 rounded-[10px] shrink-0 hover:cursor-pointer">
                <p className='font_dream text-TD-DarkSquarePink text-[45px] self-center font-semibold'>
                     About
                  </p>

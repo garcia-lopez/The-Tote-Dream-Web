@@ -1,40 +1,12 @@
 .font_logotipo {
     font-family: 'Better Saturday', 'sans-serif';
-    /*font-size: 70px;*/
-    /*margin-top: 5%;*/
-    /*position: absolute;*/
     color: #993b46;
-    /*z-index: 0;  Lower z-index value */
-
   }
 
 .font_dream {
-  /*margin-top: 100px;*/
-  /*margin-left: 60px;*/
   font-family: "Cormorant Garamond", serif;
-  /*font-weight: 400;*/
   font-style: normal;
-  /*font-size: 90px;*/
-  /*color: #d599a0;*/
-  /*position: relative;
-  z-index: 1; /* higher z-index value */
 }
-
-/*@media (max-width: 600px) {
-  /* Mobile 
-  .font_dream {
-    font-size: 16vw;
-    margin-top: 18vw; /*A viewport is the visible area of the webpage
-    margin-left: 8vw; 
-  }
-
-  .font_logotipo {
-    font-size: 12vw;
-    margin-top: 8vw;
-    margin-left: 0vw;
-  }
-  }
-*/
 
 * {
   margin: 0;
@@ -57,4 +29,25 @@ body {
 .scrollbar-custom {
   scrollbar-width: none; /* If I want the scrollbar to still appear but I want it to be thin I can use "thin" */
   /*scrollbar-color: #b15983 #ffecf1;  Thumb color and track color */
+}
+
+/*Loading Style*/
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #e1cdc3; 
+  border-top: 5px solid #993b46;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
 }
