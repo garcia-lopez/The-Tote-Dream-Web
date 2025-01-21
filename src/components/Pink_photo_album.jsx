@@ -2,23 +2,24 @@ import '../../src/App.css';
 import { viewTotes }  from '../api/images.js' 
 import ToteDialogue from './ToteDialogue';
 import { useRef, useEffect, useState } from 'react';
+import { motion, AnimatePresence } from "motion/react";
 
 const items = new Array(10).fill("value");
 
 function Pink_photo_album() {
-    const dialogRef = useRef();
     const [loading, setLoading] = useState(true); // State to track loading
     const [data, setData] = useState(null); // State to store data
     const [selectedTote, setSelectedTote] = useState();
 
-    const showDialog = (item) => {
-        if (dialogRef.current) {
-            setSelectedTote(item);
-            dialogRef.current.toggleDialog();
-        } else {
-            console.error("dialogRef is undefined");
-        }
-    }
+    //State to control modal
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const close = () => setModalOpen(false);
+    const open = (item) => {
+        setSelectedTote(item);
+        setModalOpen(true);
+
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -53,14 +54,20 @@ function Pink_photo_album() {
                     {data.map((item, i) => (
                         <div
                                 key={i}
-                                className="h-[230px] w-[230px] flex bg-TD-DarkSquarePink rounded-[10px] shrink-0 hover:cursor-pointer hover:scale-105 transition-transform duration-300"
-                                onClick={() => showDialog(item)}
+                                className="h-[230px] w-[230px] 2xl:h-[500px] 2xl:w-[500px] flex bg-TD-DarkSquarePink rounded-[10px] shrink-0 hover:cursor-pointer hover:scale-105 transition-transform duration-300"
+                                onClick={() => (modalOpen ? close() : open(item))}
                             >
-                                <img src={item.url} className='h-[200px] w-[200px] rounded-[10px] shrink-0 self-center m-auto '/>
+                                <img src={item.url} className='h-[200px] w-[200px] 2xl:h-[450px] 2xl:w-[450px] rounded-[10px] shrink-0 self-center m-auto '/>
 
                             </div>
                         ))}
-                 <ToteDialogue ref={dialogRef} data={selectedTote} />
+                        <AnimatePresence
+                         initial={false}
+                         exitBeforeEnter={true}
+                         onExitComplete={() => null}>
+                            {modalOpen && <ToteDialogue data={selectedTote} handleClose={close} />
+                        }
+                        </AnimatePresence>
                 </>
             )}
          </div>

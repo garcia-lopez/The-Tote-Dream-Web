@@ -29,7 +29,7 @@ const AboutUsDialog = ({handleClose}) => {
         <Backdrop onClick={handleClose}>
           <motion.div
             onClick={(e) => e.stopPropagation()}
-            className='w-full sm:max-w-[500px] fixed  p-4 bg-[#EAD9D1] rounded-[10px] drop-shadow-2xl'
+            className='p-4 bg-[#EAD9D1] rounded-[10px] drop-shadow-2xl'
             variants={dropIn}
             initial="hidden"
             animate="visible"

@@ -1,26 +1,41 @@
 import { useState, forwardRef, useImperativeHandle } from 'react';
+import { motion } from "motion/react";
 import close_icon from '../assets/close_icon.png'
+import Backdrop from './Backdrop';
 
-const ToteDialogue = forwardRef((props, ref) => {
-    const [openDialogue, setOpenDialogue ] = useState(false);
+const dropIn = { //Possible animation states
+    hidden: {
+      y: "-100vh",
+      opacity: 0,
+    },
+    visible: {
+      y: "0",
+      opacity: 1,
+      transition: {
+         duration: 0.1,
+         type: "spring",
+         damping: 25,
+         stiffness: 500,
+      },
+    },
+    exit: {
+      y: "100vh",
+      opacity: 0
+    },
+ };
 
-    function toggleDialog() {
-        try{
-            setOpenDialogue(!openDialogue);
-        } catch(error){
-            console.log(error)
-        }
-    }
-    useImperativeHandle(ref, () => ({
-        toggleDialog
-    }));
+const ToteDialogue = (props) => {
 
-
-
-    return <>
-      {
-        props.data && <dialog open={openDialogue} className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-4 bg-[#EAD9D1] rounded-[10px] drop-shadow-2xl transition-all duration-500 ease-out ${openDialogue ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}">
-        <div className="m-auto grid w-full" onClick={() => toggleDialog()}>
+    return <>{props.data &&  <Backdrop onClick={props.handleClose}>
+        <motion.div
+            onClick={(e) => e.stopPropagation()}
+            className='p-4 bg-[#EAD9D1] rounded-[10px] drop-shadow-2xl'
+            variants={dropIn}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+        >
+            <div className="m-auto grid w-full" onClick={props.handleClose}>
             <div className='place-self-end w-[50px] hover:cursor-pointer'>
               <img src={close_icon}></img>
             </div>
@@ -45,12 +60,15 @@ const ToteDialogue = forwardRef((props, ref) => {
              ></div>
         </div>
 
-    </dialog>
 
-
-      }
-    </>
-});
+        </motion.div>
+    </Backdrop>}
+        </>
+        
+    } 
+      
+    
+;
 
 export default ToteDialogue
 
