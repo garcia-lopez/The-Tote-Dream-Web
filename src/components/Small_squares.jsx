@@ -1,9 +1,16 @@
+import { motion, AnimatePresence } from "motion/react";
+import { useState } from "react";
 import '../../src/App.css';
 import  Shop_bag  from '../../src/assets/Bag_icon.png';
-import Tote_bag from '../assets/Tote_bag.png'
-import Stars from '../assets/Stars.png'
+import Tote_bag from '../assets/Tote_bag.png';
+import Stars from '../assets/Stars.png';
+import AboutUsDialog from './AboutUsDialog';
 
 function Small_squares() {
+   const [modalOpen, setModalOpen] = useState(false);
+
+   const close = () => setModalOpen(false);
+   const open = () => setModalOpen(true);
     return (
         <>
             <div className='bg-TD-LightPink h-fit w-fit flex flex-wrap justify-center gap-2 p-4 rounded-[10px] lg:grid lg:grid-cols-2 lg:w-fit lg:p-6 lg:gap-4'>
@@ -37,12 +44,26 @@ function Small_squares() {
                    className='w-[150px] h-[150px]'
                 />
                </div>
-               <div className=" overflow-hidden flex flex-col justify-center h-[150px] w-[150px] lg:h-[160px] lg:w-[160px] bg-TD-SquarePink hover:bg-TD-HoverPink2 rounded-[10px] shrink-0 hover:cursor-pointer">
+               <div className=" overflow-hidden flex flex-col justify-center h-[150px] w-[150px] lg:h-[160px] lg:w-[160px] bg-TD-SquarePink hover:bg-TD-HoverPink2 rounded-[10px] shrink-0 hover:cursor-pointer"
+                onClick={() => (modalOpen ? close() : open())}>
                <p className='font_dream text-TD-DarkSquarePink text-[45px] self-center font-semibold'>
                     About
                  </p>
                  <p className='font_dream text-TD-DarkSquarePink mt-[-30px] text-[45px] font-semibold self-end mr-5'>Us</p>
                </div>
+               <AnimatePresence 
+             // Disable any initial animations on children
+             // that are present when the component is first rendered
+             initial={false}
+             // Only render one component at a time.
+             // The exiting component will finish its exit
+             // animation before entering component is rendered
+             exitBeforeEnter={true}
+             // Fires when all exiting nodes have completed animation out
+             onExitComplete={() => null}
+             >
+               {modalOpen && <AboutUsDialog modalOpen={modalOpen} handleClose={close}/>}
+            </AnimatePresence>
             </div>
         </>
     )

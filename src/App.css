@@ -1,53 +1,66 @@
 .font_logotipo {
-    font-family: 'Better Saturday', 'sans-serif';
-    color: #993b46;
-  }
+  font-family: 'Better Saturday', 'sans-serif';
+  color: #993b46;
+}
 
 .font_dream {
-  font-family: "Cormorant Garamond", serif;
-  font-style: normal;
+font-family: "Cormorant Garamond", serif;
+font-style: normal;
 }
 
 * {
-  margin: 0;
-  padding: 0;
+margin: 0;
+padding: 0;
 }
 
 body {
-  margin: 0;
-  background-color: #ffecf1;
+margin: 0;
+background-color: #ffecf1;
 }
-  
+
 .container {
-  position: relative;
+position: relative;
 }
 
 .leaf {
-  position: absolute;
+position: absolute;
 }
 
 .scrollbar-custom {
-  scrollbar-width: none; /* If I want the scrollbar to still appear but I want it to be thin I can use "thin" */
-  /*scrollbar-color: #b15983 #ffecf1;  Thumb color and track color */
+scrollbar-width: none; /* If I want the scrollbar to still appear but I want it to be thin I can use "thin" */
+/*scrollbar-color: #b15983 #ffecf1;  Thumb color and track color */
 }
 
 /*Loading Style*/
 
 .spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid #e1cdc3; 
-  border-top: 5px solid #993b46;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 10px;
+width: 50px;
+height: 50px;
+border: 5px solid #e1cdc3; 
+border-top: 5px solid #993b46;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin-bottom: 10px;
 }
 
 @keyframes spin {
-  0% {
-      transform: rotate(0deg);
-  }
-  100% {
-      transform: rotate(360deg);
-  }
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #993b46e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
