@@ -8,6 +8,13 @@ font-family: "Cormorant Garamond", serif;
 font-style: normal;
 }
 
+.font_about_us {
+  font-family: "Nunito", serif;
+  font-weight: 655;
+  text-align: center;
+  color: #993b46;
+}
+
 * {
 margin: 0;
 padding: 0;
